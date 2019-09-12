@@ -34,10 +34,10 @@ def get_argument_parser(licenses: [str]):
         "-l",
         "--line-width",
         dest="line_width",
-        default=80,
+        default=-1,
         type=int,
         help="the maximum number of characters in a line of the exported license "
-        + "(defaults to 80; is disabled for negative values)",
+        + "(disabled by default)",
     )
 
     parser.add_argument(
