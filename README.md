@@ -5,13 +5,13 @@ A script for generating project licenses.
 Running `python generate_license.py -h` gives the following:
 ```terminal
 usage: generate_license.py [-h] [-a AUTHOR] [-y YEAR] [-d DESCRIPTION]
-                           [-l LINE_WIDTH] [-o OUTPUT]
-                           {Apache-2.0,GPLv3,BSD-3-Clause,BSD-2-Clause,MIT}
+                           [-l LINE_WIDTH] [-i] [-o OUTPUT]
+                           {BSD 3-Clause,Apache-2.0,GPLv3,BSD 2-Clause,MIT}
 
 A script for generating project licenses.
 
 positional arguments:
-  {Apache-2.0,GPLv3,BSD-3-Clause,BSD-2-Clause,MIT}
+  {BSD 3-Clause,Apache-2.0,GPLv3,BSD 2-Clause,MIT}
                         the name of the license
 
 optional arguments:
@@ -25,8 +25,10 @@ optional arguments:
                         applicable licenses
   -l LINE_WIDTH, --line-width LINE_WIDTH
                         the maximum number of characters in a line of the
-                        exported license (defaults to 80; is disabled for
-                        negative values)
+                        exported license (disabled by default)
+  -i, --include-license-name
+                        whether to include the license name at the beginning
+                        of the license file
   -o OUTPUT, --output OUTPUT
                         the name of the output file (defaults to LICENSE)
 ```
