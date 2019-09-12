@@ -41,6 +41,14 @@ def get_argument_parser(licenses: [str]):
     )
 
     parser.add_argument(
+        "-i",
+        "--include-license-name",
+        dest="include_license_name",
+        action="store_true",
+        help="whether to include the license name at the beginning of the license file",
+    )
+
+    parser.add_argument(
         "-o",
         "--output",
         dest="output",
@@ -101,6 +109,10 @@ with open(os.path.join(templates_folder, arguments.license), "r") as f:
 
     # split by lines
     contents = contents.splitlines()
+
+    # possibly include license name
+    if arguments.include_license_name:
+        contents = [f"{arguments.license} License", ""] + contents
 
     # possibly wrap the contents
     if arguments.line_width >= 0:
