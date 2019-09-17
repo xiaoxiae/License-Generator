@@ -81,7 +81,9 @@ def wrap_strings(lines: [str], line_width: int):
 
 
 # licenses (to give as options)
-templates_folder = "templates"
+script_path = os.path.dirname(os.path.abspath(__file__))
+templates_folder = os.path.join(script_path, "templates")
+
 licenses = os.listdir(templates_folder)
 
 # get the parser and parse the commands
